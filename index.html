@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Balaji S — .NET Full Stack Developer based in Bangalore, Karnataka.">
+    <title>Balaji S | .NET Full Stack Developer</title>
+    <link rel="icon" type="image/png" href="./assets/images/image_balu.png">
+    <link rel="apple-touch-icon" href="./assets/images/image_balu.png">
+
+    <style>
+        :root {
+            --bg: #080d18;
+            --surface: #101a2b;
+            --surface2: #142238;
+            --text: #eef3ff;
+            --muted: #a4b1c7;
+            --line: rgba(255, 255, 255, .1);
+            --purple: #f97316;
+            --cyan: #60a5fa;
+            --max: 1120px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 88px
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(ellipse at 12% 0%, rgba(124, 103, 255, .19), transparent 34rem), radial-gradient(ellipse at 95% 30%, rgba(54, 207, 190, .1), transparent 30rem), var(--bg);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            width: min(var(--max), calc(100% - 42px));
+            margin: auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(8, 13, 24, .83);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        nav {
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px
+        }
+
+        .brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #f8fafc;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: .3s ease;
+        }
+
+        .brand span {
+            color: #f97316;
+            font-size: 2.1rem;
+            font-weight: 700;
+        }
+
+        .brand:hover {
+            color: #60a5fa;
+        }
+
+        .nav {
+            display: flex;
+            gap: 23px;
+            color: var(--muted);
+            font-size: .91rem;
+            align-items: center;
+        }
+
+        .nav a:hover,
+        .social a:hover {
+            color: var(--cyan)
+        }
+
+        /* Navigation links */
+
+        .nav a {
+            position: relative;
+            transition: color .3s ease;
+        }
+
+        /* Hover color */
+
+        .nav a:hover {
+            color: #f97316;
+        }
+
+        /* Active navigation link */
+
+        .nav a.active {
+            color: #f97316;
+            font-weight: 800;
+        }
+
+        /* Orange underline */
+
+        .nav a.active:not(.nav-resume)::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 100%;
+            height: 2px;
+            background: #f97316;
+            border-radius: 5px;
+        }
+
+        /* Smooth underline animation */
+
+        .nav a:not(.nav-resume)::after {
+            transition: width .3s ease;
+        }
+
+        .hero {
+            min-height: 670px;
+
+            display: grid;
+            grid-template-columns: 1.25fr .75fr;
+
+            align-items: center;
+            gap: 55px;
+
+            padding: 82px 35px 95px;
+
+            background:
+                linear-gradient(90deg,
+                    rgba(5, 12, 35, .35),
+                    rgba(5, 12, 35, .10)),
+                url("./assets/images/portfolio-bg.png");
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            border-radius: 24px;
+        }
+
+        .eyebrow {
+            font-size: .76rem;
+            text-transform: uppercase;
+            letter-spacing: .17em;
+            font-weight: 800;
+            color: var(--cyan)
+        }
+
+        h1 {
+            font-size: clamp(3.2rem, 7vw, 6rem);
+            line-height: .99;
+            letter-spacing: -.075em;
+            margin: 18px 0 25px
+        }
+
+        h1 span {
+            background: linear-gradient(100deg,
+                    #f97316,
+                    #60a5fa);
+
+            color: transparent;
+            background-clip: text;
+        }
+
+        .role {
+            font-size: 1.16rem;
+            color: #d8def0;
+            font-weight: 650
+        }
+
+        .lead {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 1.06rem
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px
+        }
+
+        .btn {
+            padding: 11px 18px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            font-weight: 750;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: .2s
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            border-color: var(--purple)
+        }
+
+        .btn.primary {
+            background: linear-gradient(110deg, #8c79ff, #6655dd);
+            border: 0;
+            box-shadow: 0 12px 34px #6756df40
+        }
+
+        /* Profile card */
+
+        .profile {
+            border: 1px solid rgba(59, 130, 246, .25);
+            border-radius: 25px;
+            padding: 26px;
+
+            background: linear-gradient(145deg,
+                    rgba(20, 35, 70, .95),
+                    rgba(8, 13, 24, .97));
+
+            box-shadow:
+                0 28px 85px rgba(0, 0, 0, .4),
+                0 0 35px rgba(37, 99, 235, .12);
+
+            text-align: center;
+        }
+
+        /* Profile photo */
+
+        .profile-photo {
+            width: 100%;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: transparent;
+            border-radius: 20px;
+            border: 2px solid rgba(249, 115, 22, .8);
+            box-shadow: 0 12px 35px rgba(249, 115, 22, .12);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+            padding: 8px;
+            display: block;
+        }
+
+        .profile-photo img:hover {
+            transform: scale(1.04);
+        }
+
+        /* Name */
+
+        .profile h2 {
+            font-size: 1.5rem;
+            margin: 20px 0 4px;
+            color: #ffffff;
+        }
+
+        /* Designation */
+
+        .profile-role {
+            color: #fb923c !important;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        /* Location */
+
+        .profile-location {
+            color: #b7c5dd !important;
+            font-size: .88rem;
+            margin-top: 9px !important;
+        }
+
+        /* Divider */
+
+        .profile-divider {
+            width: 65px;
+            height: 3px;
+            background: linear-gradient(90deg, #f97316, #2563eb);
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        /* BS monogram */
+
+        .profile-monogram {
+            width: 48px;
+            height: 48px;
+            margin: auto;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 14px;
+
+            background: linear-gradient(135deg,
+                    #f97316,
+                    #ea580c);
+
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 900;
+
+            box-shadow: 0 8px 25px rgba(249, 115, 22, .25);
+        }
+
+        /* Availability */
+
+        .profile .available {
+            justify-content: center;
+            color: #55dfd0;
+            margin-top: 17px;
+        }
+
+        .available {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--cyan);
+            font-size: .87rem;
+            margin-top: 16px
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 12px var(--cyan)
+        }
+
+        section {
+            padding: 82px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .section-head {
+            margin-bottom: 30px
+        }
+
+        .section-head h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+            letter-spacing: -.055em;
+            margin: 8px 0
+        }
+
+        .section-head p {
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 20px
+        }
+
+        .panel {
+            background: #101a2bd9;
+            border: 1px solid var(--line);
+            border-radius: 19px;
+            padding: 25px
+        }
+
+        .panel p {
+            color: var(--muted);
+            margin: 0
+        }
+
+        .quickfacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .fact {
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 15px
+        }
+
+        .fact b {
+            display: block;
+            font-size: .98rem
+        }
+
+        .fact small {
+            color: var(--muted)
+        }
+
+        .skillgroup {
+            margin-bottom: 22px
+        }
+
+        .skillgroup:last-child {
+            margin: 0
+        }
+
+        .skillgroup h3 {
+            font-size: 1rem;
+            margin: 0 0 12px
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px
+        }
+
+        .chip {
+            font-size: .9rem;
+            padding: 8px 13px;
+            border-radius: 999px;
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            color: #dce5f7
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 17px
+        }
+
+        .project {
+            background: linear-gradient(145deg, #142238, #0f1929);
+            border: 1px solid var(--line);
+            border-radius: 19px;
+            padding: 24px;
+            transition: .2s
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            border-color: #9b8cff88
+        }
+
+        .projecttop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .picon {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            background: #9b8cff24;
+            color: #c8c0ff;
+            font-size: 1.3rem
+        }
+
+        .date {
+            font-size: .78rem;
+            color: var(--cyan)
+        }
+
+        .project h3 {
+            font-size: 1.16rem;
+            line-height: 1.35;
+            margin: 0 0 8px
+        }
+
+        .project p {
+            font-size: .93rem;
+            color: var(--muted);
+            margin: 0 0 15px
+        }
+
+        .tech {
+            font-size: .82rem;
+            color: #c2baff;
+            line-height: 1.7
+        }
+
+        .project.personal {
+            border-color: #55dfd044
+        }
+
+        .timeline {
+            display: grid;
+            gap: 0
+        }
+
+        .job {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 25px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .job:last-child {
+            border: 0;
+            padding-bottom: 0
+        }
+
+        .job:first-child {
+            padding-top: 0
+        }
+
+        .period {
+            font-size: .88rem;
+            color: var(--cyan);
+            font-weight: 750
+        }
+
+        .job h3 {
+            margin: 0;
+            font-size: 1.13rem
+        }
+
+        .company {
+            color: #d8def0;
+            font-size: .94rem
+        }
+
+        .job ul {
+            color: var(--muted);
+            margin: 10px 0 0;
+            padding-left: 19px
+        }
+
+        .job li {
+            margin: 5px 0
+        }
+
+        .education {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center
+        }
+
+        .education h3 {
+            margin: 0
+        }
+
+        .education p {
+            margin: 4px 0 0;
+            color: var(--muted)
+        }
+
+        .cgpa {
+            border: 1px solid #55dfd055;
+            color: var(--cyan);
+            padding: 8px 13px;
+            border-radius: 12px;
+            white-space: nowrap;
+            font-weight: 750
+        }
+
+        .contactbox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 32px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: linear-gradient(110deg, #8c79ff26, #55dfd014)
+        }
+
+        .contactbox h2 {
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            letter-spacing: -.05em;
+            line-height: 1.15;
+            margin: 8px 0
+        }
+
+        .contactbox p {
+            color: var(--muted);
+            margin: 0
+        }
+
+        .contactlinks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .contactlinks a {
+            padding: 10px 13px;
+            border: 1px solid var(--line);
+            border-radius: 11px;
+            font-size: .9rem
+        }
+
+        footer {
+            padding: 27px 0 38px;
+            color: var(--muted);
+            font-size: .87rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px
+        }
+
+        .nav-resume {
+            padding: 8px 12px;
+            font-size: .82rem
+        }
+
+        .nav-resume:hover {
+            color: #fff !important
+        }
+
+        @media(max-width:780px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding: 65px 0;
+                gap: 35px
+            }
+
+            .profile {
+                width: 100%;
+                max-width: 360px;
+                margin: auto;
+            }
+
+            .profile-photo {
+                height: 320px;
+            }
+
+            .hero {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .grid2,
+            .cards {
+                grid-template-columns: 1fr
+            }
+
+            .contactbox {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .nav {
+                gap: 13px;
+                flex-wrap: wrap;
+                font-size: .82rem
+            }
+
+            .job {
+                grid-template-columns: 1fr;
+                gap: 5px
+            }
+        }
+
+        @media(max-width:480px) {
+            .wrap {
+                width: calc(100% - 28px)
+            }
+
+            nav {
+                height: auto;
+                min-height: 70px;
+                align-items: flex-start;
+                flex-direction: column;
+                justify-content: center;
+                padding: 12px 0
+            }
+
+            .nav {
+                gap: 12px
+            }
+
+            .quickfacts {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .education {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            footer {
+                flex-direction: column
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="wrap"><a class="brand" href="#home">BALAJI<span> </span>S</a>
+            <div class="nav"><a href="#about">About</a><a href="#skills">Skills</a><a
+                    href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a
+                    class="btn primary nav-resume" href="./assets/Balaji_Resume.pdf" download="Balaji_Resume.pdf">↓
+                    Download Resume</a>
+            </div>
+        </nav>
+    </header>
+    <main class="wrap">
+        <section class="hero" id="home" style="border:0">
+            <div>
+                <div class="eyebrow">Portfolio · Bangalore, India</div>
+                <h1>Building<br><span>web solutions</span><br>that work.</h1>
+                <div class="role">.NET Full Stack Developer</div>
+                <p class="lead">I'm Balaji S, a .NET Full Stack Developer with 2+ years of experience building and
+                    maintaining web applications across banking, examination, and education domains. I work across
+                    backend APIs, database design, and responsive frontend experiences.</p>
+                <div class="actions">
+                    <!--<a class="btn primary" href="assets/Balaji_Resume.pdf" download>↓ Download Resume</a>-->
+                    <a href="./assets/Balaji_Resume.pdf" download="Balaji_Resume.pdf" class="btn primary"> ↓ Download
+                        Resume </a>
+                    <a class="btn" href="#projects">Explore projects ↗</a>
+                    <a class="btn" href="mailto:balajis13499@email.com">Contact me</a>
+                </div>
+            </div>
+
+            <aside class="profile">
+
+                <div class="profile-photo">
+                    <img src="./assets/images/image_balu.png" alt="Balaji S - .NET Full Stack Developer">
+                </div>
+
+                <h2>Balaji S</h2>
+
+                <p class="profile-role">
+                    .NET Full Stack Developer
+                </p>
+
+                <p class="profile-location">
+                    📍 Bangalore, Karnataka, India
+                </p>
+
+            </aside>
+
+        </section>
+
+        <section id="about">
+            <div class="section-head">
+                <div class="eyebrow">About me</div>
+                <h2>Turning requirements into<br>reliable applications.</h2>
+                <p>My focus is building practical, maintainable web applications with clean backend architecture, secure
+                    access, and responsive user interfaces.</p>
+            </div>
+            <div class="grid2">
+                <div class="panel">
+                    <p>.NET Full Stack Developer with 2+ years of experience in designing, developing, and maintaining
+                        web applications using C#, ASP.NET Core, ASP.NET Core MVC, Web API, Entity Framework Core, and
+                        SQL Server. Skilled in RESTful API development, database management, authentication, role-based
+                        authorization, and frontend development using JavaScript, jQuery, AJAX, and Bootstrap. I have
+                        contributed to projects in banking, examination, and education, including admission counselling
+                        and seat allocation workflows.</p>
+                </div>
+                <div class="quickfacts">
+                    <div class="fact"><b>2+ years</b><small>Professional experience</small></div>
+                    <div class="fact"><b>.NET</b><small>Full-stack development</small></div>
+                    <div class="fact"><b>3 domains</b><small>Banking · Exams · Education</small></div>
+                    <div class="fact"><b>Bangalore</b><small>Karnataka, India</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-head">
+                <div class="eyebrow">Technical toolkit</div>
+                <h2>Skills & technologies</h2>
+                <p>Technologies and tools used across my development work.</p>
+            </div>
+            <div class="panel">
+                <div class="skillgroup">
+                    <h3>Languages</h3>
+                    <div class="chips"><span class="chip">C#</span><span class="chip">JavaScript</span><span
+                            class="chip">SQL</span></div>
+                </div>
+                <div class="skillgroup">
+                    <h3>.NET & Backend</h3>
+                    <div class="chips"><span class="chip">ASP.NET Core</span><span class="chip">ASP.NET Core
+                            MVC</span><span class="chip">Web API</span><span class="chip">Blazor</span><span
+                            class="chip">Entity Framework Core</span><span class="chip">LINQ</span><span
+                            class="chip">RESTful APIs</span></div>
+                </div>
+                <div class="skillgroup">
+                    <h3>Frontend</h3>
+                    <div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span
+                            class="chip">jQuery</span><span class="chip">AJAX</span><span class="chip">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skillgroup">
+                    <h3>Database & Security</h3>
+                    <div class="chips"><span class="chip">SQL Server</span><span class="chip">Stored
+                            Procedures</span><span class="chip">SSMS</span><span class="chip">Authentication</span><span
+                            class="chip">Authorization</span><span class="chip">RBAC</span><span class="chip">Session
+                            Management</span></div>
+                </div>
+                <div class="skillgroup">
+                    <h3>Tools & Practices</h3>
+                    <div class="chips"><span class="chip">Visual Studio</span><span class="chip">VS Code</span><span
+                            class="chip">Git</span><span class="chip">GitHub</span><span
+                            class="chip">Swagger</span><span class="chip">Postman</span><span
+                            class="chip">IIS</span><span class="chip">Unit Testing</span><span
+                            class="chip">Debugging</span><span class="chip">Code Review</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-head">
+                <div class="eyebrow">Career path</div>
+                <h2>Professional experience</h2>
+            </div>
+            <div class="panel timeline">
+                <article class="job">
+                    <div class="period">Oct 2025 – Present</div>
+                    <div>
+                        <h3>.NET Developer</h3>
+                        <div class="company">Datacon Technologies Private Limited</div>
+                        <ul>
+                            <li>Develop and maintain web applications using C#, ASP.NET Core MVC, and SQL Server.</li>
+                            <li>Design and integrate RESTful APIs to support application functionality and business
+                                requirements.</li>
+                            <li>Build responsive interfaces using HTML, CSS, JavaScript, jQuery, AJAX, and Bootstrap.
+                            </li>
+                            <li>Implement authentication, authorization, and role-based access control.</li>
+                            <li>Create and optimize SQL queries, stored procedures, and database operations.</li>
+                            <li>Contribute to deployment, debugging, testing, and maintenance using IIS.</li>
+                            <li>Worked onsite on examination and education projects in Patna and Belagavi.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="job">
+                    <div class="period">Oct 2024 – Sep 2025</div>
+                    <div>
+                        <h3>Software Trainee</h3>
+                        <div class="company">Datacon Technologies Private Limited</div>
+                        <ul>
+                            <li>Assisted in developing ASP.NET Core MVC modules for web applications.</li>
+                            <li>Developed frontend pages using HTML, CSS, JavaScript, and jQuery.</li>
+                            <li>Integrated frontend components with backend APIs.</li>
+                            <li>Participated in application development, testing, and debugging activities.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-head">
+                <div class="eyebrow">Selected work</div>
+                <h2>Projects</h2>
+                <p>Applications and modules developed across support operations, admission counselling, examinations,
+                    and banking.</p>
+            </div>
+            <div class="cards">
+                <article class="project">
+                    <div class="projecttop">
+                        <div class="picon">▣</div><span class="date">Aug 2026</span>
+                    </div>
+                    <h3>Ticket Desk Management System</h3>
+                    <p>Developed ticket management functionality for creating, assigning, and tracking support tickets,
+                        with email notifications and role-specific access.</p>
+                    <div class="tech">C# · ASP.NET Core MVC · SQL Server</div>
+                </article>
+                <article class="project">
+                    <div class="projecttop">
+                        <div class="picon">⌂</div><span class="date">Mar 2025 – Aug 2026</span>
+                    </div>
+                    <h3>Pharmacy Admission Counseling & Seat Allocation System</h3>
+                    <p>Built modules for student and college registration, seat matrix management, admission
+                        counselling, seat allocation, valuation, result processing, and role-based access. Implemented
+                        business validations and database operations.</p>
+                    <div class="tech">C# · ASP.NET Core MVC · Entity Framework · SQL Server · jQuery · Bootstrap</div>
+                </article>
+                <article class="project">
+                    <div class="projecttop">
+                        <div class="picon">▤</div><span class="date">Nov 2024 – Jul 2025</span>
+                    </div>
+                    <h3>BSEB Examination Seat Allocation Project</h3>
+                    <p>Developed student allocation modules for multiple examination centres, including centre
+                        registration and allocation workflows based on location and examination requirements. Supported
+                        testing, debugging, database operations, and deployment.</p>
+                    <div class="tech">C# · ASP.NET Core MVC · Entity Framework · SQL Server · jQuery · Bootstrap</div>
+                </article>
+                <article class="project personal">
+                    <div class="projecttop">
+                        <div class="picon">⌁</div><span class="date">Personal project</span>
+                    </div>
+                    <h3>Annual Information Returns (AIR) – Banking Domain</h3>
+                    <p>Developed RESTful APIs to manage bank transactions, customer accounts, banks, and branches,
+                        including CRUD operations, server-side validations, and business logic.</p>
+                    <div class="tech">C# · ASP.NET Core Web API · SQL Server · Swagger</div>
+                </article>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="section-head">
+                <div class="eyebrow">Education</div>
+                <h2>Academic background</h2>
+            </div>
+            <div class="panel education">
+                <div>
+                    <h3>Bachelor of Computer Science</h3>
+                    <p>Davangere University · Graduated 2024</p>
+                </div>
+                <div class="cgpa">CGPA · 7.9 / 10</div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contactbox">
+                <div>
+                    <div class="eyebrow">Let's connect</div>
+                    <h2>Get in touch</h2>
+                    <p>Contact me for questions or discussions about my projects and .NET development work.</p>
+                    <p style="margin-top:10px">Bangalore, Karnataka · +91 8792223700</p>
+                </div>
+                <div class="contactlinks">
+                    <a href="mailto:balajis13499@email.com">✉ Email</a>
+                    <a href="https://www.linkedin.com/in/Balaji-shetty-685ab123b" target="_blank"
+                        rel="noopener">LinkedIn ↗</a>
+                    <a href="https://github.com/Balajis007" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="wrap"><span>© <span id="year"></span> Balaji S. All rights reserved.</span><span>Designed & developed
+            with care.</span></footer>
+    <script>
+
+        // Footer year
+        document.getElementById('year').textContent =
+            new Date().getFullYear();
+
+        // Active navigation menu
+        const navLinks = document.querySelectorAll(
+            '.nav a:not(.nav-resume)'
+        );
+
+        const sections = document.querySelectorAll(
+            'main section[id]'
+        );
+
+        function updateActiveNav() {
+            let currentSection = 'home';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.id;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.toggle(
+                    'active',
+                    link.getAttribute('href') === '#' + currentSection
+                );
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('load', updateActiveNav);
+
+    </script>
+</body>
+
+</html>
